@@ -11,6 +11,8 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.use('/users', userRouter);
+
 app.use((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
